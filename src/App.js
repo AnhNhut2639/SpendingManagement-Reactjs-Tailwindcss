@@ -1,11 +1,10 @@
 import "./App.css";
+import WebLayout from "./Components/Layouts/WebLayout";
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline text-red-700">
-        Hello world!
-      </h1>
+      <WebLayout />
     </div>
   );
 }
