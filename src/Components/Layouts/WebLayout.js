@@ -1,5 +1,6 @@
 import React from "react";
 import Dashboard from "../Dashboard/Index";
+import Header from "../Header/Header";
 
 function WebLayout(props) {
   return (
@@ -9,7 +10,7 @@ function WebLayout(props) {
       </div>
       <div className="flex flex-col ">
         <div className="fixed h-[9vh] w-[100%] bg-[#fff] border-solid border-[1px] border-b-[#bebaba] z-9">
-          Header
+          <Header />
         </div>
         <div className=" flex mt-[9vh] ml-[5%] h-[90vh] w-[auto] bg-[#e4e4e4]">
           main detail
