@@ -49,7 +49,7 @@ function Header(props) {
             <MdRemoveRedEye />
           </button>
           <button
-            className="pr-[42px] h-[48px] w-[48px] hover:text-[#9c2c2c]"
+            className="pr-[42px] h-[48px] w-[48px] hover:text-[#000]"
             data-tip=""
             data-for="search"
           >
