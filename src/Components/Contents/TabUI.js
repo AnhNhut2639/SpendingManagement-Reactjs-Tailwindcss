@@ -1,12 +1,13 @@
 import React from "react";
 import "tw-elements";
+import SpendingList from "./SpendingList";
 
 function TabUI(props) {
   return (
     <>
       <ul
-        className="sticky top-[60px] nav active:text-green-600 flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4
-        text-[14px] font-[roboto] font-medium leading-[16px]
+        className="sticky top-[60px] nav nav-tabs bg-[#fff]  flex flex-col md:flex-row flex-wrap list-none border-b-[1px] pl-0 mb-4
+        text-[14px] font-medium leading-[16px] 
         "
         id="tabs-tabFill"
         role="tablist"
@@ -22,10 +23,9 @@ function TabUI(props) {
       border-x-0 border-t-0 border-b-2 border-transparent
       px-6
       py-3
-      my-2
+      mt-[15px]
       hover:border-transparent hover:bg-gray-100
-      focus:border-transparent
-     
+      focus:border-transparent   
     "
             id="tabs-home-tabFill"
             data-bs-toggle="pill"
@@ -37,7 +37,7 @@ function TabUI(props) {
             last month
           </a>
         </li>
-        <li className="nav-item flex-auto text-center" role="presentation">
+        <li className="nav-item flex-auto text-center " role="presentation">
           <a
             href="#tabs-thismonth"
             className="
@@ -48,7 +48,7 @@ function TabUI(props) {
       border-x-0 border-t-0 border-b-2 border-transparent
       px-6
       py-3
-      my-2
+      mt-[15px]
       hover:border-transparent hover:bg-gray-100
       focus:border-transparent
       active 
@@ -74,7 +74,7 @@ function TabUI(props) {
       border-x-0 border-t-0 border-b-2 border-transparent
       px-6
       py-3
-      my-2
+      mt-[15px]
       hover:border-transparent hover:bg-gray-100
       focus:border-transparent
     "
@@ -89,9 +89,27 @@ function TabUI(props) {
           </a>
         </li>
       </ul>
+      <div className="flex flex-col w-[inherit] h-[143px] text-[17px] leading-[16px]">
+        <div className="flex flex-row items-center justify-between px-[8px] py-[16px] h-[32px]">
+          <p>Inflow</p>
+          <p className="text-[#58bdee]">+2,000,000</p>
+        </div>
+        <div className="flex flex-row items-center justify-between px-[8px] py-[16px] h-[32px]">
+          <p>Outflow</p>
+          <p className="text-red-600">-233,000</p>
+        </div>
+        <div className="flex flex-row items-center justify-between px-[8px] py-[16px] h-[32px]">
+          <p></p>
+          <p className="text-[#333]   w-[-16px]">+1,767,000</p>
+        </div>
+        <div className="items-center uppercase text-[#2db84c] leading-[21px] font-medium cursor-pointer ">
+          View report for this period
+        </div>
+      </div>
+
       <div className="tab-content" id="tabs-tabContentFill">
         <div
-          className="tab-pane fade show active"
+          className="tab-pane fade"
           id="tabs-lastmonth"
           role="tabpanel"
           aria-labelledby="tabs-home-tabFill"
@@ -99,12 +117,12 @@ function TabUI(props) {
           Last month
         </div>
         <div
-          className="tab-pane fade"
+          className="tab-pane fade show active"
           id="tabs-thismonth"
           role="tabpanel"
           aria-labelledby="tabs-profile-tabFill"
         >
-          This month
+          <SpendingList />
         </div>
         <div
           className="tab-pane fade"
