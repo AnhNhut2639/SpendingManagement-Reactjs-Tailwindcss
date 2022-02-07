@@ -38,7 +38,7 @@ function Header(props) {
               <BsCalendar size="20px" />
             </div>
             <span className="text-[12px] leading-[20px] mt-[5px] ml-[2px] font-semibold absolute text-center">
-              {date}
+              {date >= 10 ? date : "0" + date}
             </span>
           </button>
           <button
