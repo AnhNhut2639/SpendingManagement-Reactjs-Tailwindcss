@@ -4,7 +4,7 @@ const spendingContext = createContext();
 // use to appear detail spending
 
 function SpendingProvider({ children }) {
-  const [isHidden, setIsHidden] = useState(false);
+  const [isHidden, setIsHidden] = useState(true);
   const [detail, setDetail] = useState([]);
 
   const handleHidden = () => {
