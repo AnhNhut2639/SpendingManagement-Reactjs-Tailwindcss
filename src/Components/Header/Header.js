@@ -3,10 +3,13 @@ import { BsCalendar } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
 import { MdRemoveRedEye } from "react-icons/md";
 import ReactTooltip from "react-tooltip";
+import TransactionModal from "../Modals/TransactionModal";
+import useModal from "../hooks/useModal";
 
 function Header(props) {
   let newDate = new Date();
   let date = newDate.getDate();
+  const { isShowing, toggle } = useModal();
   return (
     <>
       <div className="flex flex-row justify-between items-center  ml-[5%]  w-[auto] h-[100%] ">
@@ -56,7 +59,11 @@ function Header(props) {
             <GoSearch />
           </button>
 
-          <button className="text-[14px] bg-[#1aa333] hover:bg-[#34be4d] text-[#ffffff] font-medium leading-[16px] w-[150px] h-[32px] rounded-[4px] font-[sans-serif]">
+          {/* Button trigger modal */}
+          <button
+            onClick={toggle}
+            className="text-[14px] bg-[#1aa333] hover:bg-[#34be4d] text-[#ffffff] font-medium leading-[16px] w-[150px] h-[32px] rounded-[4px] font-[sans-serif] active:shadow-lg transition duration-150 ease-in-out"
+          >
             ADD TRANSACTION
           </button>
         </div>
@@ -71,6 +78,8 @@ function Header(props) {
       <ReactTooltip id="transaction" place="bottom" effect="solid">
         View by transaction
       </ReactTooltip>
+      {/* Modal */}
+      <TransactionModal isShowing={isShowing} hide={toggle} />
     </>
   );
 }
