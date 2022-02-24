@@ -11,11 +11,16 @@ function SpendingProvider({ children }) {
     setIsHidden(!isHidden);
   };
 
+  const onlyVisible = () => {
+    setIsHidden(false);
+  };
+
   const value = {
     isHidden,
     handleHidden,
     detail,
     setDetail,
+    onlyVisible,
   };
   return (
     <spendingContext.Provider value={value}>

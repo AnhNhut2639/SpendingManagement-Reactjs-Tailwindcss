@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { spendingContext } from "../../Context/index";
 
 function SpendingList(props) {
-  const { handleHidden, setDetail } = useContext(spendingContext);
+  const { setDetail, onlyVisible } = useContext(spendingContext);
 
   const handleShowDetail = () => {
     let data = [
@@ -13,7 +13,8 @@ function SpendingList(props) {
         amout: 22000,
       },
     ];
-    handleHidden();
+    onlyVisible();
+
     setDetail(data);
   };
 
